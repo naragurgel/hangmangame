@@ -43,30 +43,29 @@ def start_game(word):
                 word_completion = "".join(word_as_list)
                 if "_" not in word_completion:
                     certain = True
+        elif len(try) == len(word) and try.isalpha():
+            if try in certain_words:
+                print("You alredy guessed the word", guess)
+            elif try != word:
+                print(try, "is not the word.")
+                attempts -= 1
+                certain_words.append(try)
+            else:
+                certain = True
+                word_completion = word
 
-    elif len(try) == len(word) and try.isalpha():
-        if try in certain_words:
-            print("You alredy guessed the word", guess)
-        elif try != word:
-            print(try, "is not the word.")
-            attempts -= 1
-            certain_words.append(try)
+
         else:
-            certain = True
-            word_completion = word
+            print("Not a valid guess.")
+        print(display_hangman(attempts))
+        print(word_completion)
+        print("\n")
 
+    if certain:
+        print("God job, you guessed the word! You win!")
 
     else:
-        print("Not a valid guess.")
-    print(display_hangman(attempts))
-    print(word_completion)
-    print("\n")
-
-if certain:
-    print("God job, you guessed the word! You win!")
-
-else:
-    print("Unfortunately, you ran out of tries. The word was " + word + ". Maybe next time!")
+        print("Unfortunately, you ran out of tries. The word was " + word + ". Maybe next time!")
 
 def display_hangman(tries):
     stages = [  # final state: head, torso, both arms, and both legs
@@ -141,3 +140,13 @@ def display_hangman(tries):
                 """
     ]
     return stages[tries]
+
+def main():
+    word = choose_word()
+    start_game(word)
+    while input("Play Again? (Y/N)A "). upper() == "Y":
+        word = choose_word()
+        start_game(word)
+
+if __name__ == "__main__":
+    main()
