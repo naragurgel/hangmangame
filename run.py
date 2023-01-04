@@ -27,6 +27,22 @@ def start_game(word):
     while not certain and attempts > 0:
         try = input("Please guess a letter or word: ").upper()
         if len(try) == 1 and try.isalpha():
+            if try in certain_letters:
+                print("You alredy guessed the letter", try)
+            elif guess not in word:
+                print(try, "is not in the word.")
+                attempts -= 1
+                certain_letters.append(try)
+            else:
+                print("Well done,", try, "is in the word!")
+                certain_letters.append(try)
+                word_as_list = list(word_completion)
+                indices = [i for i, letter in enumerate(word) if letter == try]
+                for index in indices:
+                    word_as_list[index] = try
+                word_completion = "".join(word_as_list)
+                if "_" not in word_completion:
+                    certain = True
 
     elif len(try) == len(word) and try.isalpha():
 
