@@ -28,7 +28,7 @@ def start_game(word):
         tries = input("Please guess a letter or word: ").upper()
         if len(tries) == 1 and tries.isalpha():
             if tries in certain_letters:
-                print("You alredy guessed the letter", try)
+                print("You alredy guessed the letter", tries)
             elif tries not in word:
                 print(tries, "is not in the word.")
                 attempts -= 1
@@ -37,7 +37,7 @@ def start_game(word):
                 print("Well done,", tries, "is in the word!")
                 certain_letters.append(tries)
                 word_as_list = list(word_completion)
-                indices = [i for i, letter in enumerate(word) if letter == try]
+                indices = [i for i, letter in enumerate(word) if letter == tries]
                 for index in indices:
                     word_as_list[index] = tries
                 word_completion = "".join(word_as_list)
@@ -144,7 +144,7 @@ def display_hangman(tries):
 def main():
     word = choose_word()
     start_game(word)
-    while input("Play Again? (Y/N)A "). upper() == "Y":
+    while input("Play Again? (Y/N) "). upper() == "Y":
         word = choose_word()
         start_game(word)
 
