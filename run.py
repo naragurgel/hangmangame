@@ -25,31 +25,31 @@ def start_game(word):
     the loops runs till the word is guessed or the users runs out of tries
     """
     while not certain and attempts > 0:
-        try = input("Please guess a letter or word: ").upper()
-        if len(try) == 1 and try.isalpha():
-            if try in certain_letters:
+        tries = input("Please guess a letter or word: ").upper()
+        if len(tries) == 1 and tries.isalpha():
+            if tries in certain_letters:
                 print("You alredy guessed the letter", try)
-            elif try not in word:
-                print(try, "is not in the word.")
+            elif tries not in word:
+                print(tries, "is not in the word.")
                 attempts -= 1
-                certain_letters.append(try)
+                certain_letters.append(tries)
             else:
-                print("Well done,", try, "is in the word!")
-                certain_letters.append(try)
+                print("Well done,", tries, "is in the word!")
+                certain_letters.append(tries)
                 word_as_list = list(word_completion)
                 indices = [i for i, letter in enumerate(word) if letter == try]
                 for index in indices:
-                    word_as_list[index] = try
+                    word_as_list[index] = tries
                 word_completion = "".join(word_as_list)
                 if "_" not in word_completion:
                     certain = True
-        elif len(try) == len(word) and try.isalpha():
-            if try in certain_words:
+        elif len(tries) == len(word) and tries.isalpha():
+            if tries in certain_words:
                 print("You alredy guessed the word", guess)
-            elif try != word:
-                print(try, "is not the word.")
+            elif tries != word:
+                print(tries, "is not the word.")
                 attempts -= 1
-                certain_words.append(try)
+                certain_words.append(tries)
             else:
                 certain = True
                 word_completion = word
