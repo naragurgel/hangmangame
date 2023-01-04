@@ -21,4 +21,21 @@ def start_game(word):
     print(display_hangman(attempts))
     print(word_completion)
     print("\n")
+    """
+    the loops runs till the word is guessed or the users runs out of tries
+    """
+    while not certain and attempts > 0:
+        try = input("Please guess a letter or word: ").upper()
+        if len(try) == 1 and try.isalpha():
+
+    elif len(try) == len(word) and try.isalpha():
+
+    else:
+        print("Not a valid guess.")
+    print(display_hangman(attempts))
+    print(word_completion)
+    print("\n")
+
+
+
 
