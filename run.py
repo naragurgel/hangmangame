@@ -29,7 +29,7 @@ def start_game(word):
         if len(try) == 1 and try.isalpha():
             if try in certain_letters:
                 print("You alredy guessed the letter", try)
-            elif guess not in word:
+            elif try not in word:
                 print(try, "is not in the word.")
                 attempts -= 1
                 certain_letters.append(try)
@@ -45,6 +45,14 @@ def start_game(word):
                     certain = True
 
     elif len(try) == len(word) and try.isalpha():
+        if try in certain_words:
+            print("You alredy guessed the word", guess)
+        elif try != word:
+            print(try, "is not the word.")
+            attempts -= 1
+            certain_words.append(try)
+        else:
+
 
     else:
         print("Not a valid guess.")
