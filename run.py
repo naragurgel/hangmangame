@@ -25,7 +25,7 @@ def start_game(word):
     the loops runs till the word is guessed or the users runs out of tries
     """
     while not certain and attempts > 0:
-        tries = input("Please guess a letter or word: ").upper()
+        tries = input("Please guess a letter or word: \n").upper()
         if len(tries) == 1 and tries.isalpha():
             if tries in certain_letters:
                 print("You alredy guessed the letter", tries)
