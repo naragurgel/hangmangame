@@ -1,6 +1,6 @@
 # Hangman Game
 - Screenshot of logo/navigation of mobile deployed site
-- Include a link to deployed project with one line explanation of project
+- Hangman is a guessing game where players try to guess the English words chosen by the computer, the player suggests letters and they have a number of tries.
 
 ## Author
 Nara Gurgel
@@ -16,58 +16,38 @@ Nara Gurgel
 Generate after readme is complete for UX and below
 
 ## How To Play/Use
-Paragraph or bullet points of how the user initiates the program and interfaces with it. You could have videos of each bit if you want and ditact what the user should do.
+- A random word is chosen by the computer.
+- The user can type a letter to guess the word.
+- The user can see how many tries they have.
+- When the user types a letter, it will show as correct then the letter appear in the word or else it will take a life from the hangman.
+- The user can continue typing until the word is guessed or they run out of tries.
+- If the user guess the correct word, the game will show a well done message. If the user does not guess it, the game shown a message saying that.
+- The user can choose to play again and a new random word will be chosen by the computer.
 
 ## Features
-Use this section to itemize the features of your project. 
 
-For some/all of your features, you may choose to reference the specific project files that implement them, although this is entirely optional.
+### Home Screen
+- This is the home screen when the user open the game.
 
-It's easiest to break this section down into piece parts or core functionality blocks such as data upload, user input, analysis and data output; focusing on the atomic functions and data model(s) or classes you created to make the program work. 
+### Failed tries
+- The failed message saying to the user the try was wrong.
 
+### Guessed tries
+- The message saying the letter is correct.
 
-### Implemented Features
-In each subsection, write out what the feature is for and what value it adds. If there is terminal interaction or output associated with the function, include a screenshot.
+### Congratulation message
+- When the user guess what was the word.
+
+### Run out of try message
+- When the user does not guess the word and run out of tries.
 
 
 ### Future Features
+- All letters already used will be displayed on the screen
 
-Use this section to discuss plans for additional features to be implemented in the future:
-
-If you end up not developing some features you hoped to implement, you can include those in this section.
-
-
-## Design Documents
-
-This section is where you would share logic diagrams and spreadsheets that you created as part of the design process. These files should themselves either be included as a pdf file in the project itself (in a separate directory), or just hosted elsewhere online and can be in any format that is viewable inside the browser. 
-
-The flowchart can be as simple as a picture of a drawing of how you envisioned laying out the logic for you project, or done with a professional tool such as powerpoint, googlesheets, or [https://app.diagrams.net/](https://app.diagrams.net/) They are a roadmap and do not have to be 100% accurate of the final product.
-
-## Data Model/ Classes
-In this section write our your data model(s) or classes. 
-
-You might want to include subsections that include how the data in the model is initialized and then the methods that you created to update it through the program.
-
-
-You can create a table and take a screenshot, or you can write up subsections in markdown:
-
-![image](https://user-images.githubusercontent.com/23039742/130148204-b56406bf-0fff-48f3-9dee-2f3cdbe67cc5.png)
-
-### Class X
-To better group the game as an object, I wrote a class representing its properties and had method functions to update those properties: 
-
-**Properties**
-- property 1: is a {string} it represents {something} 
-- property 2: is a {string} it represents {something} 
-
-**Methods**
-- **\_\_init\_\_**: Initialize method, it starts the class off with default parameters as if a user just started to play a game.
-- **\_\_str\_\_**: Returns a string representation of the class/object
-
-## Libraries used
-List out the python libraries you purposefully used in your project and why. You can look at your requirements.txt file and go back to https://pypi.org/ to rediscover the purpose of a library if needed.
-
-A bulleted list is a good presentation for this information.
+## Libraries and tools used
+- Github to help with the lis of random words
+- https://www.online-spellcheck.com/For spell checking
 
 ## Testing
 
