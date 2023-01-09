@@ -161,75 +161,17 @@ def yes_no(question):
 ```
 
 ## Deployment
+The site was deployed to Heroku pages. The steps to deploy are as follows:
 
-### Requirements
-If the user is required to have certain keys and credentials you should include this section with diretions on how to get the necessary information.
-ex)
-1. **Google Account:** In order to have this program work, you need a google account. If you don't have one  [Create a google account](https://accounts.google.com/Signup)
-2. **Google APIs**
-    1. in a new incognito tab, log into your new google account.
-    1. then update the url to be: https://console.cloud.google.com/getting-started?pli=1 
-        
-        **GOOGLE DRIVE API Access**
-        1.  create a new project for this, call it XXXXXX (You might want to refer to what you see in this video: https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/071036790a5642f9a6f004f9888b6a45/ at the bottom of the screen to write out steps.)
-        2. Then click on Add APIs and Services and select Libraries
-        3. Search for Google Drive
-        4. Click Enable
-        5. Click Create Credentials
-        6. Select Google Drive API from the drop down, Application Data, then no and click the Next Button
-        7.  (https://developers.google.com/drive/api/v3/enable-drive-api) 
-        8. for service account details fill in a service account name ex) xxx_API, then click Create and Continue
-        9. For the Accoun acces, select Role: Basic/Editor then continue
-        10. Then Click Done
-        11. Now select the newly created service account
-        12. Click on the KEYS Tab
-        13. Click Add Key
-        14. Select JSON type (right click to show in folder so you know where the file was saved.
-        
-        **GOOGLE SHEETS API Access**
-        You may need to us the back button get to the APIS & SErvices section from where you were.
-        1. click the Libray  Tab and serarch for Google Sheets
-        2. click enable
-
-3. The downloaded credentialsJSON file is basically your creds.json file that you need to put into your heroku settings or gitpod environment to access your google drive.
-
-4. Google Sheet Template
-  - If you had to create specific sheets for your project, instruct users to make their own copy of it from yours and rename it back to what the python project expects
-  - And don't forget to share the spreadsheet in question with the client_email from the creds.json 
-### Gitpod
-This section should describe the process someone would have to go through to get the local working in gitpod.  Such as install requirements.txt  and setting up a creds.json file that is in the gitignore and keeping their workspace.
-
-If you have project settings required such as a creds.json file from the GOOGLE DRIVE API acess, please provide an example of that file in the writeup with the project key values:
-```$python
-{
-    "type": "service_account",
-    "project_id": "<YOUR_VALUE>",
-    "private_key_id": "<YOUR_VALUE>",
-    "private_key": "<YOUR_VALUE>",
-    "client_email": "<YOUR_VALUE>",
-    "client_id": "<YOUR_VALUE>",
-    "auth_uri": "https://accoutns.google.com/0/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cer_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "clien_x509_cert_url": "<YOUR_VALUE>"
-}
-```
-
-If you have any dependencies, you should instruct users to install them
-```$python
-pip3 install -r requirements.txt
-```
-
-
-
-### Heroku
-This section should describe the process you went through to deploy the project to Heroku. Include screenshots if you think they would make the process easier.
-
-You may want to re-watch the [python essentials deployment video](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/e3b664e16366444c8d722c5d8340b340/?child=first) when writing up this section.
-
-
-If you have project settings required for Heroku, provide a table of the keys and values.
-Do not share your personal keys but either cut them out of the screen shot or say <YOUR_VALUE> and include links on how the user would obtain such values.
+- Log in Heroku.
+- Click New and select 'Create new app'
+- Choose a name for the app, region and click on 'Create app'.
+- Only 'Deploy' and 'Settings' are relevant from the menu section. Starting with the 'Settings' first.
+- Now Buildpacks need to be added. They install future dependencies that are needed outside of the requirements file. The first is Python and the second is node.js. Python needs to be selected first and then node.js. Save this selection.
+- Now the 'Deploy' section needs to be selected from the menu and connect it to github.
+- Enter the name of the repository we want to connect it with and click 'Connect'
+- The choice appears now to either deploy using automatic deploys or manual deployment, which deploys the current state of the branch.
+- Click deploy branch.
 
 #### Fork the repository
 Make a fork so you have a copy of the repository in your own git hub account: https://github.com/maliahavlicek/portfolio_project_03
