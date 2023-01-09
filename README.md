@@ -28,19 +28,23 @@ Generate after readme is complete for UX and below
 
 ### Home Screen
 - This is the home screen when the user open the game.
+![image](https://user-images.githubusercontent.com/112726044/211365887-2569946e-158d-4c98-aee6-6c09a5de780a.png)
 
 ### Failed tries
 - The failed message saying to the user the try was wrong.
+![image](https://user-images.githubusercontent.com/112726044/211366039-ae106287-5775-4fbb-a062-1ba8416d2df8.png)
 
 ### Guessed tries
 - The message saying the letter is correct.
+![image](https://user-images.githubusercontent.com/112726044/211366171-a78e44d0-cb3b-4484-91bb-d49c4496f412.png)
 
-### Congratulation message
-- When the user guess what was the word.
+### Not valid message
+- Not valid input.
+![image](https://user-images.githubusercontent.com/112726044/211366274-da7abd25-760f-46ef-a8d9-b610950e6845.png)
 
 ### Run out of try message
 - When the user does not guess the word and run out of tries.
-
+![image](https://user-images.githubusercontent.com/112726044/211366457-d50e5d98-077f-43ee-856e-09945fb1d86a.png)
 
 ### Future Features
 - All letters already used will be displayed on the screen
