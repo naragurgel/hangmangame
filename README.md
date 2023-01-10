@@ -1,19 +1,22 @@
 # Hangman Game
-- Screenshot of logo/navigation of mobile deployed site
 - Hangman is a guessing game where players try to guess the English words chosen by the computer, the player suggests letters and they have a number of tries.
+
+## Repository 
+https://github.com/naragurgel/hangmangame
 
 ## Author
 Nara Gurgel
 
-## Project Overview
-- Include a recording of site that shows the terminal interaction.
-  https://chrome.google.com/webstore/detail/loom-for-chrome/liecbddmkiiihnedobmlmillhodjkdmb is a very intuitive and free tool to do a web recording.
-- Then you can use https://cloudconvert.com/mp4-to-gif to convert the mp4 to a gif and just paste it into the readme via GitHub, and it'll resolve itself.
-- One or two sentences providing an overview of your project.
-- Include a link to your deployed website
+## **Table of Contents**
 
-## Table of Contents
-Generate after readme is complete for UX and below
+1. [UX Development](#ux-development)
+    * [Project Goal](#project-goal)
+    * [User Stories](#user-stories)
+        * [First Time Visitors](#first-time-visitors)
+        * [Returning Users](#returning-users)
+        * [Site Owners Goals](#site-owners-goals)
+
+2. [Features](#features)  
 
 ## How To Play/Use
 - A random word is chosen by the computer.

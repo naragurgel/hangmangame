@@ -1,6 +1,36 @@
 import random
 from words import word_list
 
+class HangmanGame:
+    """
+    Data Model for Hangman Game
+
+    ***
+    Attributes
+    ----------
+    word: str
+        random word user is trying to guess in 6 attempts
+    word_completion: str
+        display of word with blanks for user's guesses
+    certain: Boolean
+        tracks if user has guessed current word or not
+    certain_letters: array of str
+        tracks letters user has guessed 
+    certain_words: array of strings
+        tracks words user has guessed
+    attempts: int
+        count down of attempts untl user looses game
+    """
+    
+    def __init__(self):
+        self.word = ""
+        self.word_completion = ""
+        self.certain = False
+        self.certain_letters = []
+        self.certain_words = []
+        self.attempts = 6
+
+
 def choose_word():
     """
     Gets a random word from the list 'words' and converts the user input to uppercase to make easer the comparison logic
