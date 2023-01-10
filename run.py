@@ -66,6 +66,9 @@ class HangmanGame:
             print("Unfortunately, you ran out of guesses. The word was " + self.word + ". Maybe next time!")  # noqa
 
     def display_hangman(self):
+        """
+        to print the game instructions and the hangman tries
+        """
         print(f"Available Letters: {' '.join(sorted(self.available_letters))}")
         print(STAGES[self.attempts])
         print(self.word_displayed)
@@ -75,6 +78,9 @@ class HangmanGame:
         print("\n")
 
     def resolve_guessed_letter(self, guessed_letter):
+        """
+        commands for game results as inputs from the user
+        """
         if guessed_letter in self.guessed_letters:
             print(f"You already guessed the letter {guessed_letter}")
         elif guessed_letter not in self.word:
@@ -87,6 +93,9 @@ class HangmanGame:
         self.available_letters -= {guessed_letter}
 
     def resolve_guessed_word(self, guessed_word):
+        """
+        result for guessed word 
+        """
         if guessed_word in self.guessed_words:
             print("You already guessed the word", guessed_word)
         elif guessed_word != self.word:
@@ -98,6 +107,9 @@ class HangmanGame:
             self.word_displayed = self.word
 
     def reveal_letters(self, guessed_letter):
+        """
+        result gor guessed letters
+        """
         word_as_list = list(self.word_displayed)
         indices = [i for i, letter in enumerate(self.word) if letter == guessed_letter]
         for index in indices:
