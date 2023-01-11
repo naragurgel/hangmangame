@@ -44,7 +44,7 @@ class HangmanGame:
         """
         represent unguesses letters as underscores and show letter as correct guesses #noqa
         """
-        print("Are you ready to play Hangman? Let's get started!")
+        print("\33[1;34mAre you ready to play Hangman? Let's get started!\33[m")
         self.display_hangman()
         """
         the loops runs till the word is guessed or the users runs out of guessed_letter
@@ -57,7 +57,7 @@ class HangmanGame:
             elif len(guess) == len(self.word) and guess.isalpha():
                 self.resolve_guessed_word(guess)
             else:
-                print("Not a valid guess.")
+                print("\33[1;41mNot a valid guess.\33[m")
             self.display_hangman()
 
         if self.game_completed:
