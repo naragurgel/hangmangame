@@ -61,9 +61,9 @@ class HangmanGame:
             self.display_hangman()
 
         if self.game_completed:
-            print("God job, you guessed the word! You won!")
+            print("\33[1;32mGod job, you guessed the word! You won!\33[m")
         else:
-            print("Unfortunately, you ran out of guesses. The word was " + self.word + ". Maybe next time!")  # noqa
+            print("\33[1;31mUnfortunately, you ran out of guesses. The word was " + self.word + ". Maybe next time!\33[m")  # noqa
 
     def display_hangman(self):
         """
