@@ -9,9 +9,7 @@
     - [Features](#features)
       - [Implemented Features](#implemented-features)
       - [Future Features](#future-features)
-    - [Flow Chart](#flow-chart)
     - [Data Model/ Classes](#data-model-classes)
-      - [Class X](#class-x)
     - [Libraries used](#libraries-used)
     - [Testing](#testing)
       - [Validation Testing](#validation-testing)
@@ -30,10 +28,11 @@
       - [Media](#media)
       - [Acknowledgments](#acknowledgments)
 
-# Hangman Game
+## Hangman Game
+
 - Hangman is a guessing game where players try to guess the English words chosen by the computer, the player suggests letters and they have a number of tries.
 
-GIF
+
 
 ## Live Site
 https://hangmangames.herokuapp.com/
@@ -105,56 +104,32 @@ Nara Gurgel
 | main()                                       | Greets the user and ask the user if they wants to play the game or not                                       |
 |                                              |                                                                                                              |
 
-### Class X
-To better group the game as an object, I wrote a class representing its properties and had method functions to update those properties: 
-
-**Properties**
-- property 1: is a {string} it represents {something} 
-- property 2: is a {string} it represents {something} 
-
-**Methods**
-- **\_\_init\_\_**: Initialize method, it starts the class off with default parameters as if a user just started to play a game.
-
 ## Libraries used
 
+
 ## Testing
-
-In this section, you need to convince the assessor that you have conducted enough testing to legitimately believe that the site works well. Essentially, in this part you will want to go over all of your features and ensure that they all work as intended in an easy and straightforward way for the users to achieve their goals.
-
 
 ### Validation Testing
 You should try to ensure you code is valid and follows proper indentation.  In this section you should write up any websites you used to validate your code. As your projects becomes more complex these tools may change.
 
 For each python file in your project, run it through the pep8online validator
 
-- [PEP8 Validator](http://pep8online.com/) include a screenshot of results
-
-Note any errors or warnings you are ignoring and why. 
-
-If the line is too long just add 
-```$python 
-# noqa
-```
-There is a space before the # and after it to skip the quality assurance for that line.
+- [PEP8 Validator](https://pep8ci.herokuapp.com/#)
 
 ### Manual Testing
 
-Use Markdown to track how you tested each bit of user input for each valid option, various invalid entries and leading/trailing spaces
-
 **Feature 1**
-- [ ] invalid entry, says sorry and repropts
-- [ ] no entry, says sorry and reprompts
-- [ ] alpha when numeric expected, sorry and reprompts
-- [ ] valid entry with leading spaces, trimmed and shows proper next stage
-- [ ] valid entry with trailing spaces, trimed and shows proper next stage
-
-You should also call out how you tested any other features such as:
-- Welcome Message, recaps user name
-- Score update shows current score
-- color change for correct vs incorrect
-- google sheet updated properly
-
-If you prefer spreadsheets, create a googlesheet and link to it in this section, just make sure you update the permissions to allow anyone to view it.
+- Welcome message is working.
+- Input asking user name is working.
+- Input with the question "are you ready to to play" Y/N is working.
+- Input to type the letter or word tries is working.
+- Number of tries is changine everytime when the users is incorrect. 
+- Letters guessed list is working.
+- Words guessed list is working.
+- Alert when the use insert a invalid input working.
+- Alert when the user run out of tries.
+- Input asking if the user wants to play again Y/N working.
+- Good Bye message working.
 
 ### Defect Tracking
 
@@ -174,25 +149,6 @@ Sometimes it's as simple, word wrapping issue that makes the site look odd at a 
 
 ### Commenting Code
 
-Make sure you  use triple double quotes to document fuctions and classes.
- Here'a  documentation worthy example:
-```$python
-def yes_no(question):
-    """
-    Function to ask a simple yes no question of the user.
-    :param question: String displayed as the question
-    :return: answer: String equal to "1" or "2" representing yes or no respectfully
-    """
-    print(question)
-    print("yes = 1")
-    print("no = 2")
-    answer = input("enter your answer here \n").strip()
-    while answer not in ("1", "2"):
-        print("please choose 1 for yes and 2 for no")
-        answer = input("enter your answer here \n").strip()
-    return answer
-
-```
 
 ## Deployment
 The site was deployed to Heroku pages. The steps to deploy are as follows:

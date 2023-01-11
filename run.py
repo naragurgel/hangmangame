@@ -25,6 +25,9 @@ def username():
 
 
 def display_goodbye():
+    """
+    message to say good bye
+    """
     print(pyfiglet.figlet_format('Thank you, good bye!'))
 
 
