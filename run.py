@@ -2,6 +2,31 @@ import random
 import string
 from words import word_list
 from stages import STAGES
+import pyfiglet
+
+
+def retrieve_yes_no_response(input_value):
+    response = input(input_value)
+    if response.upper() == "Y":
+        return True
+    elif response.upper() == 'N':
+        return False
+    else:
+        print('Invalid input. Please try again.')
+        retrieve_yes_no_response(input_value)
+
+
+def username():
+    """
+    To get user's name
+    """
+    name = input('Enter your name: \n')
+    print(f"Hey, {name}! Let's Play.")
+
+
+def display_goodbye():
+    print(pyfiglet.figlet_format('Thank you, good bye!'))
+
 
 class HangmanGame:
     """
@@ -17,38 +42,31 @@ class HangmanGame:
     certain: Boolean
         tracks if user has guessed current word or not
     guessed_letters: array of str
-        tracks letters user has guessed 
+        tracks letters user has guessed
     guessed_words: array of strings
         tracks words user has guessed
     attempts: int
         count down of attempts untl user looses game
     """
 
-    def __init__(self):
-        self.word = ""
-        self.word_displayed = ""
+    def __init__(self, word):
+        self.word = word.upper()
+        self.word_displayed = "_" * len(word)
         self.game_completed = False
         self.guessed_letters = []
         self.guessed_words = []
         self.attempts = 6
         self.available_letters = set(string.ascii_uppercase)
 
-    def choose_word(self):
+    def run_game(self):
         """
-        Gets a random word from the list 'words' and converts the user input to uppercase to make easer the comparison logic
+        represent unguesses letters as underscores
+        and show letter as correct guesses
         """
-        self.word = random.choice(word_list).upper()
-        self.word_displayed = "_" * len(self.word)
-
-    def start_game(self):
-        """
-        represent unguesses letters as underscores and show letter as correct guesses #noqa
-        """
-        print("\33[1;34mAre you ready to play Hangman? Let's get started!\33[m")
+        print("\33[1;34mLet's get started!\33[m")
         self.display_hangman()
-        """
-        the loops runs till the word is guessed or the users runs out of guessed_letter
-        """
+        # the loops runs till the word is guessed
+        # or the users runs out of guessed_letter
         while not self.game_completed and self.attempts > 0:
             guess = input("Please guess a letter or word: \n").upper()
             if len(guess) == 1 and guess.isalpha():
@@ -63,7 +81,10 @@ class HangmanGame:
         if self.game_completed:
             print("\33[1;32mGod job, you guessed the word! You won!\33[m")
         else:
-            print("\33[1;31mUnfortunately, you ran out of guesses. The word was " + self.word + ". Maybe next time!\33[m")  # noqa
+            print(
+                "\33[1;31mUnfortunately, you ran out of guesses. The word was "
+                + self.word + ". Maybe next time!\33[m"
+                )
 
     def display_hangman(self):
         """
@@ -94,7 +115,7 @@ class HangmanGame:
 
     def resolve_guessed_word(self, guessed_word):
         """
-        result for guessed word 
+        result for guessed word
         """
         if guessed_word in self.guessed_words:
             print("You already guessed the word", guessed_word)
@@ -108,25 +129,32 @@ class HangmanGame:
 
     def reveal_letters(self, guessed_letter):
         """
-        result gor guessed letters
+        result for guessed letters
         """
         word_as_list = list(self.word_displayed)
-        indices = [i for i, letter in enumerate(self.word) if letter == guessed_letter]
+        indices = [
+            i for i, letter in enumerate(self.word)
+            if letter == guessed_letter
+            ]
         for index in indices:
             word_as_list[index] = guessed_letter
         self.word_displayed = "".join(word_as_list)
         if "_" not in self.word_displayed:
             self.game_completed = True
 
-def main():
-    game = HangmanGame()
-    game.choose_word()
-    game.start_game()
 
-    while input("Play Again? (Y/N) \n").upper() == "Y":
-        game = HangmanGame()
-        game.choose_word()
-        game.start_game()
+def main():
+    print(pyfiglet.figlet_format("HANGMAN"))
+    username()
+    want_to_play = retrieve_yes_no_response(
+        '\33[1;36mAre you ready to play Hangman? (Y/N)\33[m'
+        )
+    while want_to_play:
+        word = random.choice(word_list)
+        game = HangmanGame(word)
+        game.run_game()
+        want_to_play = retrieve_yes_no_response('Play Again? (Y/N) \n')
+    display_goodbye()
 
 
 if __name__ == "__main__":
