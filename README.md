@@ -32,8 +32,6 @@
 
 - Hangman is a guessing game where players try to guess the English words chosen by the computer, the player suggests letters and they have a number of tries.
 
-
-
 ## Live Site
 https://hangmangames.herokuapp.com/
 
