@@ -243,23 +243,20 @@ B. Deploy either manual or automatic
 ![image](https://user-images.githubusercontent.com/23039742/132136241-9d76fabb-39f0-4696-bc5f-047398fdaf41.png) 
 
 
-## Credits
-
-To avoid plagiarism amd copyright infringement, you should mention any other projects, stackoverflow, videos, blogs, etc that you used to gather imagery or ideas for your code even if you used it as a starting point and modified things. Giving credit to other people's efforts and ideas that saved you time acknowledges the hard work others did. 
+## Credits 
 
 -[Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
     - The Template for the GUI for this project was provided by Code Institute. This allows for the Command line to be shown and used within the browser.
-
-### Content
-
-Use bullet points to list out sites you copied text from and cross-reference where those show up on your site
+-[How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w)
+-[Python Project: Coding Hangman](https://www.youtube.com/watch?v=Ff--def_1q0)
+    - Videos from Youtube as inspiration.
+-[StackOverflow](https://stackoverflow.com/)
+    - General questions about the code.
+-[Hangman Stages](https://inventwithpython.com/invent4thed/chapter8.html)
+- I would like to say thank you to my mentor Malia, she's very patient, always available to help in the best way possible.
 
 ### Media
 
-Make a list of sites you used images from. If you used several sites try to match up each image to the correct site. This includes attribution for icons if they came from font awesome or other sites, give them credit.
+-[Fontes](https://www.geeksforgeeks.org/python-ascii-art-using-pyfiglet-module/)
+    - Blog explain how to import fonts to the comand.
 
-### Acknowledgments
-
-This is the section where you refer to code examples, mentors, blogs, stack overflow answers and videos that helped you accomplish your end project. Even if it's an idea that you updated you should note the site and why it was important to your completed project.
-
-If you used a CodeInstitute Instructional project as a starting point. Make note of that here too.
