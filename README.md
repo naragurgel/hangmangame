@@ -88,14 +88,22 @@ Nara Gurgel
 - Top 5 players score with googlesheet.
 
 ## Data Model/ Classes
-In this section write our your data model(s) or classes. 
-
-You might want to include subsections that include how the data in the model is initialized and then the methods that you created to update it through the program.
-
-
-You can create a table and take a screenshot, or you can write up subsections in markdown:
-
-![image](https://user-images.githubusercontent.com/23039742/130148204-b56406bf-0fff-48f3-9dee-2f3cdbe67cc5.png)
+| Class Name: HangmanGame                      |                                                                                                              |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------------------|
+| Parameters:                                  | Type                                                                                                         |
+| word                                         | string: word from words list                                                                                 |
+| Methods:                                     |                                                                                                              |
+| retrieve_yes_no_response(input_value)        | Outputs a boolean value based on the user response (Y/N)                                                     |
+| username()                                   | Retrieve username and print greeting in the screen                                                           |
+| display_goodbye()                            | Print goodbye in the screen                                                                                  |
+| __init__(self, word)                         | Initialize method, it starts the class off with default parameters as if a user just started to play a game. |
+| run_game(self)                               | Run the game until the user ran out of tries or won the game                                                 |
+| display_hangman(self)                        | Display all the visual cues for the user to play the game                                                    |
+| resolve_guessed_letter(self, guessed_letter) | Decides if the guessed letter existe in the word and update the game                                         |
+| resolve_guessed_word(self, guessed_word)     | Decides if the word is the one chosen by the computer                                                        |
+| reveal_letters(self, guessed_letter)         | Update the display word to show the position of the guessed letter                                           |
+| main()                                       | Greets the user and ask the user if they wants to play the game or not                                       |
+|                                              |                                                                                                              |
 
 ### Class X
 To better group the game as an object, I wrote a class representing its properties and had method functions to update those properties: 
@@ -106,7 +114,6 @@ To better group the game as an object, I wrote a class representing its properti
 
 **Methods**
 - **\_\_init\_\_**: Initialize method, it starts the class off with default parameters as if a user just started to play a game.
-- **\_\_str\_\_**: Returns a string representation of the class/object
 
 ## Libraries used
 
