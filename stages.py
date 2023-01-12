@@ -1,4 +1,4 @@
-STAGES = [ # final state: head, torso, both arms, and both legs
+STAGES = [  # final state: head, torso, both arms, and both legs 
                 """
                    --------
                    |      |

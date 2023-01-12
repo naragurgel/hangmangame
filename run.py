@@ -8,6 +8,9 @@ from time import sleep
 
 
 def retrieve_yes_no_response(input_value):
+    """
+    validate user input data
+    """
     response = get_user_input(input_value)
     if response == "Y":
         return True
@@ -17,9 +20,14 @@ def retrieve_yes_no_response(input_value):
         print('Invalid input. Please try again.')
         retrieve_yes_no_response(input_value)
 
+
 def get_user_input(input_value):
+    """
+    to get the user responde data and put it upper case and take out any space
+    """
     response = input(input_value)
-    return  response.upper().strip()
+    return response.upper().strip()
+
 
 def username():
     """
