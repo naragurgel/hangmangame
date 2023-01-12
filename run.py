@@ -7,9 +7,9 @@ import pyfiglet
 
 def retrieve_yes_no_response(input_value):
     response = input(input_value)
-    if response.upper() == "Y":
+    if response.upper().strip() == "Y":
         return True
-    elif response.upper() == 'N':
+    elif response.upper().strip() == 'N':
         return False
     else:
         print('Invalid input. Please try again.')
@@ -150,7 +150,7 @@ def main():
     print(pyfiglet.figlet_format("HANGMAN"))
     username()
     want_to_play = retrieve_yes_no_response(
-        '\33[1;36mAre you ready to play Hangman? (Y/N)\33[m'
+        '\33[1;36mAre you ready to play Hangman? (Y/N)\n\33[m'
         )
     while want_to_play:
         word = random.choice(word_list)
