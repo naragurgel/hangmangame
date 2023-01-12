@@ -9,7 +9,7 @@ from time import sleep
 
 def retrieve_yes_no_response(input_value):
     """
-    validate user input data
+    Outputs a boolean value based on the user response (Y/N)
     """
     response = get_user_input(input_value)
     if response == "Y":
@@ -23,7 +23,8 @@ def retrieve_yes_no_response(input_value):
 
 def get_user_input(input_value):
     """
-    to get the user responde data and put it upper case and take out any space
+    Retrieve user input in uppercase and stripped
+
     """
     response = input(input_value)
     return response.upper().strip()
@@ -31,7 +32,7 @@ def get_user_input(input_value):
 
 def username():
     """
-    To get user's name
+    Retrieve username and print greeting in the screen
     """
     name = input('Enter your name: \n')
     print(f"Hey, {name}! Let's Play.")
@@ -39,7 +40,7 @@ def username():
 
 def display_goodbye():
     """
-    message to say good bye
+    Print goodbye in the screen
     """
     print(pyfiglet.figlet_format('Thank you, good bye!'))
 
@@ -66,6 +67,10 @@ class HangmanGame:
     """
 
     def __init__(self, word):
+        """
+        Initialize method, it starts the class off 
+        with default parameters as if a user just started to play a game.
+        """
         self.word = word.upper()
         self.word_displayed = [x for x in "*" * len(word)]
         self.game_completed = False
@@ -76,8 +81,7 @@ class HangmanGame:
 
     def run_game(self):
         """
-        represent unguesses letters as underscores
-        and show letter as correct guesses
+        Run the game until the user ran out of tries or won the game
         """
         print("\33[34mLet's get started!\33[m")
         self.display_hangman()
@@ -104,7 +108,7 @@ class HangmanGame:
 
     def display_hangman(self):
         """
-        to print the game instructions and the hangman tries
+        Display all the visual cues for the user to play the game
         """
         sleep(2)
         os.system('clear')
@@ -119,7 +123,7 @@ class HangmanGame:
 
     def resolve_guessed_letter(self, guessed_letter):
         """
-        commands for game results as inputs from the user
+        Decides if the guessed letter existe in the word and update the game
         """
         if guessed_letter in self.guessed_letters:
             print(f"You already guessed the letter {guessed_letter}")
@@ -134,7 +138,7 @@ class HangmanGame:
 
     def resolve_guessed_word(self, guessed_word):
         """
-        result for guessed word
+        Decides if the word is the one chosen by the computer
         """
         if guessed_word in self.guessed_words:
             print("You already guessed the word", guessed_word)
@@ -148,7 +152,7 @@ class HangmanGame:
 
     def reveal_letters(self, guessed_letter):
         """
-        result for guessed letters
+        Update the display word to show the position of the guessed letter
         """
         indices = [
             i for i, letter in enumerate(self.word)
@@ -161,6 +165,9 @@ class HangmanGame:
 
 
 def main():
+    """
+    Greets the user and ask the user if they wants to play the game or not
+    """
     print(pyfiglet.figlet_format("HANGMAN"))
     username()
     want_to_play = retrieve_yes_no_response(

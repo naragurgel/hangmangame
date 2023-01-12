@@ -64,12 +64,13 @@ Nara Gurgel
 - Top 5 players score with googlesheet.
 
 ## Data Model/ Classes
-| Class Name: HangmanGame                      |                                                                                                              |
+| Class: Hangman Game                          |                                                                                                              |
 |----------------------------------------------|--------------------------------------------------------------------------------------------------------------|
-| Parameters:                                  | Type                                                                                                         |
+| **Parameters:**                              | Type                                                                                                         |
 | word                                         | string: word from words list                                                                                 |
-| Methods:                                     |                                                                                                              |
+| **Methods:**                                 | Retrieve user input in uppercase and stripped                                                                |
 | retrieve_yes_no_response(input_value)        | Outputs a boolean value based on the user response (Y/N)                                                     |
+| username()                                   | Retrieve username and print greeting in the screen                                                           |
 | username()                                   | Retrieve username and print greeting in the screen                                                           |
 | display_goodbye()                            | Print goodbye in the screen                                                                                  |
 | __init__(self, word)                         | Initialize method, it starts the class off with default parameters as if a user just started to play a game. |
@@ -80,7 +81,6 @@ Nara Gurgel
 | reveal_letters(self, guessed_letter)         | Update the display word to show the position of the guessed letter                                           |
 | main()                                       | Greets the user and ask the user if they wants to play the game or not                                       |
 |                                              |                                                                                                              |
-
 ## Testing
 
 ### Validation Testing
