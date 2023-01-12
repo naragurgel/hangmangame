@@ -1,37 +1,30 @@
 # Table of Contents
 
-- [Hangman Game](hangman-game)
+- [Hangman Game](#hangman-game)
     - [Live Site](#live-site)
     - [Repository](#repository)
     - [Author](#author)
-    - [Table of Contents](#table-of-contents)
     - [How To Play/Use](#how-to-playuse)
     - [Features](#features)
       - [Implemented Features](#implemented-features)
       - [Future Features](#future-features)
     - [Data Model/ Classes](#data-model-classes)
-    - [Libraries used](#libraries-used)
     - [Testing](#testing)
       - [Validation Testing](#validation-testing)
       - [Manual Testing](#manual-testing)
       - [Defect Tracking](#defect-tracking)
-      - [Defects of Note](#defects-of-note)
-      - [Outstanding Defects](#outstanding-defects)
       - [Commenting Code](#commenting-code)
     - [Deployment](#deployment)
       - [Fork the repository](#fork-the-repository)
-      - [Requirements](#requirements)
-      - [Gitpod](#gitpod)
       - [Heroku](#heroku)
     - [Credits](#credits)
-      - [Content](#content)
       - [Media](#media)
-      - [Acknowledgments](#acknowledgments)
 
 ## Hangman Game
 
 - Hangman is a guessing game where players try to guess the English words chosen by the computer, the player suggests letters and they have a number of tries.
 
+![image](https://user-images.githubusercontent.com/112726044/212087774-b4314842-23d0-4388-9f67-70c779082bf3.png)
 
 ## Live Site
 https://hangmangames.herokuapp.com/
@@ -41,8 +34,6 @@ https://github.com/naragurgel/hangmangame
 
 ## Author
 Nara Gurgel
-
-## Table of Contents
 
 ## How To Play/Use
 - A random word is chosen by the computer.
@@ -57,29 +48,16 @@ Nara Gurgel
 
 ### Implemented Features
 
-### Home Screen
-- This is the home screen when the user open the game.
-
-### Failed tries
-- The failed message saying to the user the try was wrong.
-
-### Guessed tries
-- The message saying the letter is correct.
-
-### Letters used 
--All letters already used are displayed on the screen.
-
-### Not valid message
-- Not valid input.
-
-### Run out of try message
-- When the user does not guess the word and run out of tries.
-
-### You won message
-- When the user guess the word.
-
-### Play Again option
-- The user can choose whether or not to play again.
+- User input is transformed to uppercase & leading and trailing spaces are stripped so user has a greater chance of successful input
+- Invalid entries are in RED to let user know they had an issue visually
+- Successful Guesses are in GREEN to let the user know they had success
+- Screen Clears between guesses to avoid user confusion of some previous messaging showing from previous guesses
+- Prompts are in BLUE to draw out a different to user
+- Other text is in WHITE
+- Letters Avaiable are updated based on user’s guesses
+- Guessed Letters are updated based on user’s guesses
+- Guessed Words are updated based on user’s guesses
+- Number of Tries and Stage of Hangman as updated as user makes an incorrect guess
 
 ### Future Features
 - Require users to login then track wins & losses.
@@ -102,9 +80,6 @@ Nara Gurgel
 | reveal_letters(self, guessed_letter)         | Update the display word to show the position of the guessed letter                                           |
 | main()                                       | Greets the user and ask the user if they wants to play the game or not                                       |
 |                                              |                                                                                                              |
-
-## Libraries used
-
 
 ## Testing
 
@@ -132,19 +107,11 @@ For each python file in your project, run it through the pep8online validator
 
 ### Defect Tracking
 
-Try to create issues in real time as it better reflects the daily life of a developer.
-
-The easiest way to track defects is by using GITHUB's Issues to track these as it's really easy to copy/paste screenshots in and then write up how you closed them. At this stage you don't need a custom template or labels, that comes in P4.
-
-### Outstanding Defects
-It's ok to not resolve all the defects you found as long as:
-- it does not impacting a user from completing a vital function on the website
-- it only affects a very small subset of users
-- is an extreme edge case that very few users would try
-
-If you know of something that isn't quite right, create an issue and  link to it here and explain why you chose not to resolve it. 
-
-Sometimes it's as simple, word wrapping issue that makes the site look odd at a certain screensize that you just didn't have time to fix due to the impending deadline and lack of skills. It's best to mention it but note why you allowed it to go live than let asccessors think you didn't notice it. 
+- Do you want to Play should have a line return for user input gathering
+- If user does invalid input, the message should be RED
+- Successful guesses should have messages in GREEN
+- Prompts for user input should be BLUE
+- Word looks like 1 long line in browser
 
 ### Commenting Code
 
@@ -163,93 +130,44 @@ The site was deployed to Heroku pages. The steps to deploy are as follows:
 - Click deploy branch.
 
 #### Fork the repository
-Make a fork so you have a copy of the repository in your own git hub account: https://github.com/maliahavlicek/portfolio_project_03
+https://github.com/naragurgel/hangmangame
 
-![image](https://user-images.githubusercontent.com/23039742/132136504-eb79a6f3-0205-4c82-80c2-eef136ec7e4c.png)
-
-
-### Gitpod
-🚀 **merit & beyond**
-
-This section should describe the process someone would have to go through to get the local working in gitpod.  Such as install requirements.txt  and setting up a creds.json file that is in the gitignore and keeping their workspace.
-
-If you have project settings required such as a creds.json file from the GOOGLE DRIVE API acess, please provide an example of that file in the writeup with the project key values:
-```$python
-{
-    "type": "service_account",
-    "project_id": "<YOUR_VALUE>",
-    "private_key_id": "<YOUR_VALUE>",
-    "private_key": "<YOUR_VALUE>",
-    "client_email": "<YOUR_VALUE>",
-    "client_id": "<YOUR_VALUE>",
-    "auth_uri": "https://accoutns.google.com/0/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cer_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "clien_x509_cert_url": "<YOUR_VALUE>"
-}
-```
-
-If you have any dependencies, you should instruct users to install them
-```$python
-pip3 install -r requirements.txt
-```
+![image](https://user-images.githubusercontent.com/112726044/212092918-9546c3ea-efc3-4bf1-9766-f4dc68ec39dc.png)
 
 ### Heroku
 🚨**Required** 
 
-This section should describe the process you went through to deploy the project to Heroku. Include screenshots if you think they would make the process easier.
+1.  New App
+Log into Heroku and create a new App  and name it. 
 
-You may want to re-watch the [python essentials deployment video](https://learn.codeinstitute.net/courses/course-v1:CodeInstitute+LS101+2021_T1/courseware/293ee9d8ff3542d3b877137ed81b9a5b/e3b664e16366444c8d722c5d8340b340/?child=first) when writing up this section.
+![image](https://user-images.githubusercontent.com/112726044/212093170-04ebd75c-ca49-424c-bee0-8fab26cc4dd2.png)
+![image](https://user-images.githubusercontent.com/112726044/212093236-377c61e1-5a54-4c0a-991b-ed2a79af9218.png)
 
+2.  Settings
+**Build Packs**
 
-If you have project settings required for Heroku, provide a table of the keys and values.
-Do not share your personal keys but either cut them out of the screen shot or say <YOUR_VALUE> and include links on how the user would obtain such values.
-
-1. Fork the repository
-
-Make a fork so you have a copy of the repository in your own git hub account: https://github.com/maliahavlicek/portfolio_project_03
-
-![image](https://user-images.githubusercontent.com/23039742/132136504-eb79a6f3-0205-4c82-80c2-eef136ec7e4c.png)
-
-
-2.  New Project
-Log into Heroku and create a new project. Name it something like XXX_coders_bistro.
-
-
-3.  Settings
-On the settings tab you have to address two things:
-A. **Config Vars**
-
-  ![image](https://user-images.githubusercontent.com/23039742/132135869-215d2e0f-805d-40a8-a8c2-fb1098e2645d.png)
-
-  At a bar minimum you should show the user that they need to add the PORT. 8000 key value pair.
-
-
-B. **Build Packs**
-
-  ![image](https://user-images.githubusercontent.com/23039742/132135918-28cac112-7766-4277-905c-4a4963d8442d.png)
+![image](https://user-images.githubusercontent.com/112726044/212093470-52606a0a-a847-41ad-9cbc-516ca6f324ce.png)
 
   add Python Then Node.js
 
-
-4. Deploy
+3. Deploy
 A. Set up to github and select the correct repository:
 
-  ![image](https://user-images.githubusercontent.com/23039742/132136113-c257c921-d10c-4ccc-af09-6a1d25136395.png)
+![image](https://user-images.githubusercontent.com/112726044/212093645-99b6e711-2b12-4f0d-88b7-71184fb3a3ac.png)
 
 B. Deploy either manual or automatic
 
-![image](https://user-images.githubusercontent.com/23039742/132136241-9d76fabb-39f0-4696-bc5f-047398fdaf41.png) 
+![image](https://user-images.githubusercontent.com/112726044/212093733-8f4bf006-7bb7-4bbd-b2be-2f49cf8b7752.png) 
 
 
 ## Credits 
 
--[Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
+- [Code Institute Template](https://github.com/Code-Institute-Org/python-essentials-template)
     - The Template for the GUI for this project was provided by Code Institute. This allows for the Command line to be shown and used within the browser.
--[How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w)
--[Python Project: Coding Hangman](https://www.youtube.com/watch?v=Ff--def_1q0)
+- [How to build HANGMAN with Python](https://www.youtube.com/watch?v=m4nEnsavl6w)
+- [Python Project: Coding Hangman](https://www.youtube.com/watch?v=Ff--def_1q0)
     - Videos from Youtube as inspiration.
--[StackOverflow](https://stackoverflow.com/)
+- [StackOverflow](https://stackoverflow.com/)
     - General questions about the code.
 -[Hangman Stages](https://inventwithpython.com/invent4thed/chapter8.html)
 - I would like to say thank you to my mentor Malia, she's very patient, always available to help in the best way possible.
