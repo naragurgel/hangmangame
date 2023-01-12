@@ -68,8 +68,8 @@ class HangmanGame:
 
     def __init__(self, word):
         """
-        Initialize method, it starts the class off 
-        with default parameters as if a user just started to play a game.
+        Initialize method, it starts the class off with default parameters.
+        as if a user just started to play a game.
         """
         self.word = word.upper()
         self.word_displayed = [x for x in "*" * len(word)]

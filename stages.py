@@ -1,5 +1,5 @@
-STAGES = [  # final state: head, torso, both arms, and both legs 
-                """
+STAGES = [  # final state: head, torso, both arms, and both legs
+    """
                    --------
                    |      |
                    |      O
@@ -8,8 +8,8 @@ STAGES = [  # final state: head, torso, both arms, and both legs
                    |     / \\
                    -
                 """,
-                # head, torso, both arms, and one leg
-                """
+    # head, torso, both arms, and one leg
+    """
                    --------
                    |      |
                    |      O
@@ -18,8 +18,8 @@ STAGES = [  # final state: head, torso, both arms, and both legs
                    |     / 
                    -
                 """,
-                # head, torso, and both arms
-                """
+    # head, torso, and both arms
+    """
                    --------
                    |      |
                    |      O
@@ -28,8 +28,8 @@ STAGES = [  # final state: head, torso, both arms, and both legs
                    |      
                    -
                 """,
-                # head, torso, and one arm
-                """
+    # head, torso, and one arm
+    """
                    --------
                    |      |
                    |      O
@@ -38,8 +38,8 @@ STAGES = [  # final state: head, torso, both arms, and both legs
                    |     
                    -
                 """,
-                # head and torso
-                """
+    # head and torso
+    """
                    --------
                    |      |
                    |      O
@@ -48,8 +48,8 @@ STAGES = [  # final state: head, torso, both arms, and both legs
                    |     
                    -
                 """,
-                # head
-                """
+    # head
+    """
                    --------
                    |      |
                    |      O
@@ -58,8 +58,8 @@ STAGES = [  # final state: head, torso, both arms, and both legs
                    |     
                    -
                 """,
-                # initial empty state
-                """
+    # initial empty state
+    """
                    --------
                    |      |
                    |      
@@ -68,4 +68,4 @@ STAGES = [  # final state: head, torso, both arms, and both legs
                    |     
                    -
                 """
-    ]
+]
