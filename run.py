@@ -3,18 +3,23 @@ import string
 from words import word_list
 from stages import STAGES
 import pyfiglet
+import os
+from time import sleep
 
 
 def retrieve_yes_no_response(input_value):
-    response = input(input_value)
-    if response.upper().strip() == "Y":
+    response = get_user_input(input_value)
+    if response == "Y":
         return True
-    elif response.upper().strip() == 'N':
+    elif response == 'N':
         return False
     else:
         print('Invalid input. Please try again.')
         retrieve_yes_no_response(input_value)
 
+def get_user_input(input_value):
+    response = input(input_value)
+    return  response.upper().strip()
 
 def username():
     """
@@ -54,7 +59,7 @@ class HangmanGame:
 
     def __init__(self, word):
         self.word = word.upper()
-        self.word_displayed = "_" * len(word)
+        self.word_displayed = [x for x in "*" * len(word)]
         self.game_completed = False
         self.guessed_letters = []
         self.guessed_words = []
@@ -66,26 +71,26 @@ class HangmanGame:
         represent unguesses letters as underscores
         and show letter as correct guesses
         """
-        print("\33[1;34mLet's get started!\33[m")
+        print("\33[34mLet's get started!\33[m")
         self.display_hangman()
         # the loops runs till the word is guessed
         # or the users runs out of guessed_letter
         while not self.game_completed and self.attempts > 0:
-            guess = input("Please guess a letter or word: \n").upper()
+            guess = get_user_input("Please guess a letter or word: \n")
             if len(guess) == 1 and guess.isalpha():
                 self.resolve_guessed_letter(guess)
 
             elif len(guess) == len(self.word) and guess.isalpha():
                 self.resolve_guessed_word(guess)
             else:
-                print("\33[1;41mNot a valid guess.\33[m")
+                print("\33[41mNot a valid guess.\33[m")
             self.display_hangman()
 
         if self.game_completed:
-            print("\33[1;32mGod job, you guessed the word! You won!\33[m")
+            print("\33[32mGod job, you guessed the word! You won!\33[m")
         else:
             print(
-                "\33[1;31mUnfortunately, you ran out of guesses. The word was "
+                "\33[31mUnfortunately, you ran out of guesses. The word was "
                 + self.word + ". Maybe next time!\33[m"
                 )
 
@@ -93,11 +98,14 @@ class HangmanGame:
         """
         to print the game instructions and the hangman tries
         """
+        sleep(2)
+        os.system('clear')
         print(f"Available Letters: {' '.join(sorted(self.available_letters))}")
         print(STAGES[self.attempts])
-        print(self.word_displayed)
+        print('Can you solve this word:')
+        print(' '.join(self.word_displayed))
         print(f"Tries left: {self.attempts}")
-        print(f'Letters guessed: {" ".join(self.guessed_letters)}')
+        print(f'Letters guessed: {" ".join(sorted(self.guessed_letters))}')
         print(f'Words guessed: {" ".join(self.guessed_words)}')
         print("\n")
 
@@ -134,15 +142,13 @@ class HangmanGame:
         """
         result for guessed letters
         """
-        word_as_list = list(self.word_displayed)
         indices = [
             i for i, letter in enumerate(self.word)
             if letter == guessed_letter
             ]
         for index in indices:
-            word_as_list[index] = guessed_letter
-        self.word_displayed = "".join(word_as_list)
-        if "_" not in self.word_displayed:
+            self.word_displayed[index] = guessed_letter
+        if "*" not in self.word_displayed:
             self.game_completed = True
 
 
@@ -150,7 +156,7 @@ def main():
     print(pyfiglet.figlet_format("HANGMAN"))
     username()
     want_to_play = retrieve_yes_no_response(
-        '\33[1;36mAre you ready to play Hangman? (Y/N)\n\33[m'
+        '\33[36mAre you ready to play Hangman? (Y/N)\n\33[m'
         )
     while want_to_play:
         word = random.choice(word_list)
