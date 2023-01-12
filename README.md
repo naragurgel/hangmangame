@@ -81,14 +81,19 @@ Nara Gurgel
 | reveal_letters(self, guessed_letter)         | Update the display word to show the position of the guessed letter                                           |
 | main()                                       | Greets the user and ask the user if they wants to play the game or not                                       |
 |                                              |                                                                                                              |
+
 ## Testing
 
 ### Validation Testing
-You should try to ensure you code is valid and follows proper indentation.  In this section you should write up any websites you used to validate your code. As your projects becomes more complex these tools may change.
 
-For each python file in your project, run it through the pep8online validator
+- run.py
+![image](https://user-images.githubusercontent.com/112726044/212104486-b8cac9ab-8a05-4cf6-af8f-a1d37dc23bce.png)
 
-- [PEP8 Validator](https://pep8ci.herokuapp.com/#)
+- words.py
+![image](https://user-images.githubusercontent.com/112726044/212104578-4cb052be-5b62-480b-b173-04a4b4fa0da8.png)
+
+- stages.py
+![image](https://user-images.githubusercontent.com/112726044/212104641-1279b26c-0480-49de-b4b7-49d43608cacc.png)
 
 ### Manual Testing
 
@@ -114,7 +119,9 @@ For each python file in your project, run it through the pep8online validator
 - Word looks like 1 long line in browser
 
 ### Commenting Code
+Example of a comment on the code.
 
+![image](https://user-images.githubusercontent.com/112726044/212105048-fc9e80c8-ff96-4a8a-8525-8630c7253ebe.png)
 
 ## Deployment
 The site was deployed to Heroku pages. The steps to deploy are as follows:
@@ -158,7 +165,6 @@ A. Set up to github and select the correct repository:
 B. Deploy either manual or automatic
 
 ![image](https://user-images.githubusercontent.com/112726044/212093733-8f4bf006-7bb7-4bbd-b2be-2f49cf8b7752.png) 
-
 
 ## Credits 
 
