@@ -1,7 +1,7 @@
 STAGES = [  # final state: head, torso, both arms, and both legs
     """
-   stages were taken from tutorial at https://inventwithpython.com/invent4thed/chapter8.html 
-   """
+    stages were taken from tutorial at https://inventwithpython.com/invent4thed/chapter8.html 
+    """
     """
                    --------
                    |      |
