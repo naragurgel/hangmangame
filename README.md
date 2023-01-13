@@ -46,6 +46,8 @@ Nara Gurgel
 
 ## Features
 
+https://user-images.githubusercontent.com/112726044/212376593-72c37240-69ed-4f09-b51e-26d57253e01f.mp4
+
 ### Implemented Features
 
 - User input is transformed to uppercase & leading and trailing spaces are stripped so user has a greater chance of successful input
@@ -81,6 +83,10 @@ Nara Gurgel
 | reveal_letters(self, guessed_letter)         | Update the display word to show the position of the guessed letter                                           |
 | main()                                       | Greets the user and ask the user if they wants to play the game or not                                       |
 |                                              |                                                                                                              |
+
+## Flow diagram
+
+![image](https://user-images.githubusercontent.com/112726044/212376330-8625242e-1605-40a0-8c5d-038228a6f93a.png)
 
 ## Testing
 
